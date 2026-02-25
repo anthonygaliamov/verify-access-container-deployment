@@ -10,6 +10,22 @@ fi
 # Get environment from common/env-config.sh
 . "$RUNDIR/../common/env-config.sh"
 
+# Check if Docker is installed
+if ! command -v docker &> /dev/null
+then
+  echo "Error: Docker is not installed or not in PATH."
+  echo "Please install Docker Desktop from https://www.docker.com/products/docker-desktop"
+  exit 1
+fi
+
+# Check if Docker daemon is running
+if ! docker info &> /dev/null
+then
+  echo "Error: Docker daemon is not running."
+  echo "Please start Docker Desktop and try again."
+  exit 1
+fi
+
 if [ ! -f "$DOCKERKEYS/openldap/ldap.key" ] || [ ! -f "$DOCKERKEYS/openldap/ldap.crt" ] || [ ! -f "$DOCKERKEYS/openldap/ca.crt" ] || [ ! -f "$DOCKERKEYS/openldap/dhparam.pem" ] || [ ! -f "$DOCKERKEYS/postgresql/server.pem" ] || [ ! -f "$DOCKERKEYS/isvaop/personal/isvaop.key" ] || [ ! -f "$DOCKERKEYS/isvaop/signer/isvaop.pem" ]
 then
   echo "Key files not found.  Restore or create keys before running this script."
