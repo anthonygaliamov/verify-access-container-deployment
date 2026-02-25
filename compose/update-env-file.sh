@@ -9,9 +9,9 @@ if [ -z "$RUNDIR" ] ; then
 fi
 
 # Get environment from common/env-config.sh
-. $RUNDIR/../common/env-config.sh
+. "$RUNDIR/../common/env-config.sh"
 
-cd $RUNDIR/iamlab
+cd "$RUNDIR/iamlab"
 
 
 echo "Updating .env using common/env-config.sh"

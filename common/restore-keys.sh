@@ -8,11 +8,11 @@ if [ -z "$RUNDIR" ] ; then
 fi
 
 # Get environment from common/env-config.sh
-. $RUNDIR/env-config.sh
+. "$RUNDIR/env-config.sh"
 
 # Create a temporary working directory
 TMPDIR=/tmp/backup-$RANDOM$RANDOM
-mkdir $TMPDIR
+mkdir "$TMPDIR"
 
 if [ $# -ne 1 ]
 then
@@ -32,9 +32,9 @@ then
   exit 1
 fi
 
-mkdir -p ${DOCKERKEYS}
-tar -xf $1 -C ${TMPDIR}
-cp -R ${TMPDIR}/dockerkeys/* ${DOCKERKEYS}
+mkdir -p "${DOCKERKEYS}"
+tar -xf "$1" -C "${TMPDIR}"
+cp -R "${TMPDIR}"/dockerkeys/* "${DOCKERKEYS}"
 
-rm -rf ${TMPDIR}
+rm -rf "${TMPDIR}"
 echo Done.

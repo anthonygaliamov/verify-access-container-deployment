@@ -3,11 +3,12 @@ These assets are for IBM Verify Identity Access v11.0.0.0.
 They will also work for older versions (eg. IBM Security Verify Access v10.0.8.0) if version is changed where appropriate.
 
 Assets for v10.0.0.0 (which will also work with v10.0.1.0) are available as a release.  Checkout tag `v10.0.0.0-1`.
-
+<!-- FIXME: Link doesn't work -->
 Assets for IBM Security Access Manager are available at https://ibm.biz/isamdocker
 
 # Resources
 ## Cookbooks
+<!-- TODO: Links to cookbooks don't work. Download them some how. -->
 ### Deployment with Native Docker and Docker Compose
 This cookbook describes deployment with Native Docker and Docker Compose.  It covers some docker concepts, deployment of Verify Identity Access containers, and initial configuration of a simple Verify Identity Access system. [Download docker cookbook from Security Learning Academy](http://ibm.biz/Verify_Access_Docker_Cookbook).
 
